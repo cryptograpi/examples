@@ -1,0 +1,8 @@
+en:
+  date:
+    formats:
+      defaults: "%d/%m/%Y"
+
+  time:
+    formats:
+      default: "%d/%m/%Y %H:%M"
