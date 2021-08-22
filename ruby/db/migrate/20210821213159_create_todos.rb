@@ -4,7 +4,6 @@ class CreateTodos < ActiveRecord::Migration[6.1]
       t.string :todo 
 
       t.timestamps
-      end
     end
   end
 end
