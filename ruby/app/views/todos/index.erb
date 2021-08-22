@@ -1,6 +1,6 @@
 <main class="container">
-  <section class="add-todo">
 
+  <section class="add-todo">
     <img src="images/simple_to_image.png" alt="Todo Image">
     <header>
       <h1 class="add-todo__title">Simple Todo</h1>
@@ -8,4 +8,32 @@
       <p class="info">By Cryptograpi</p>
     </header>
   </section>
+
+  <section class="list-todo">
+    <div class="list-todo-content">
+      <% if !@todos.blank? %>
+        <% @todos.each do|t| %>
+          <header class="list-todo__main">
+            <article class="list-todo__content">
+                <h3><%= t.todo %></h3>
+                <p>Created at: <%= t.created_time %></p>
+              </article>
+              <aside class="list-todo__sidebar">
+                <form action="/<%= t.id %>" method="post">
+                  <input type='hidden' name="_method" value="delete">
+                  <input class="list-todo__btn" type="submit" value="Delete">
+                </form>
+              </aside>
+          </header>
+        <% end %>
+      <% else %>
+        <header class="list-todo__empty">
+          <img src="images/lazycat.png" alt="Todo Image">
+          <h2 class="list-todo__title">You currently have nothing todo</h2>
+          <p class="list-todo__content">Get busy!</p>
+        </header>
+      <%end%>
+    </div>
+  </section>
+
 </main>
