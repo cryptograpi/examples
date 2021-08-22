@@ -11,8 +11,8 @@ class TodosController < ApplicationController
 
   delete '/:id' do
     id = params[:id]
-    Todo.:(id)
+    Todo.destroy(id)
     redirect '/'
   end
-  
+
 end
